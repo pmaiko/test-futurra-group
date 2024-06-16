@@ -29,8 +29,6 @@ export default defineNuxtConfig({
     // inlineStyles: id => !id?.includes('entry')
   },
 
-
-
   devtools: { enabled: true }
 })
 // https://nuxt.com/docs/api/configuration/nuxt-config
