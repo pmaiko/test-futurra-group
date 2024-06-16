@@ -1,0 +1,194 @@
+$root: form-field;
+
+.#{form-field} {
+  position: relative;
+
+  &__control {
+	position: relative;
+	height: 100%;
+  }
+
+  &__field {
+	display: flex;
+	align-items: center;
+	background-color: $c-form-field-background;
+  }
+
+  &__input,
+  &__input::placeholder,
+  &__placeholder,
+  &__label,
+  &__dropdown-list-item {
+	font-size: $fs-p3;
+	font-weight: 700;
+	line-height: $lh-p3;
+	color: $c-form-field-text;
+  }
+
+  &__input {
+	width: 100%;
+	padding: 14px 16px;
+	text-align: left;
+	text-overflow: ellipsis;
+	background-color: transparent;
+	border: none;
+	outline: none;
+
+	&::placeholder {
+	  transition: color $base-transition;
+	}
+  }
+
+  &__icon {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	display: flex;
+	flex-shrink: 0;
+	align-items: center;
+	justify-content: center;
+	margin-right: 12px;
+	transform: translateY(-50%);
+  }
+
+  &__label,
+  &__placeholder {
+	color: $c-form-field-label;
+  }
+
+  &__placeholder {
+	font-weight: 400;
+  }
+
+  &__label {
+	position: absolute;
+	top: 50%;
+	z-index: 1;
+	display: inline-block;
+	padding: 0 5px;
+	margin-left: 12px;
+	pointer-events: none;
+	background-color: $c-form-field-background;
+	border-radius: 30px;
+	transition: $base-transition;
+	transform: translateY(-50%);
+
+	a {
+	  text-decoration: underline;
+	  text-underline-offset: 3px;
+	  transition: $base-transition;
+	}
+  }
+
+  &__field,
+  &__outline {
+	border-radius: $form-field-border-radius;
+  }
+
+  &__outline {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	border: 1px solid $c-form-field-border;
+  }
+
+  &__error {
+	&.form-error {
+	  margin-top: 18px;
+	}
+  }
+
+  &__dropdown {
+	position: absolute;
+	top: 100%;
+	z-index: 9;
+	width: 100%;
+	padding-bottom: 24px;
+
+	@include is(var2) {
+	  top: calc(100% - 1px);
+	}
+
+	&-list {
+	  max-height: 156px;
+	  overflow: hidden auto;
+	  background-color: $c-form-field-background;
+	  border: 1px solid $c-form-select-dropdown-border;
+	  border-radius: 0 0 $border-radius $border-radius;
+
+	  &-item {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 8px 8px 8px 16px;
+		cursor: pointer;
+		transition: $base-transition;
+
+		&_active {
+		  color: $c-form-select-dropdown-active-text;
+		  background-color: $c-success;
+		}
+
+		&:not(&_active) {
+		  @include hover {
+			color: $c-form-select-dropdown-active-text;
+			background-color: $c-success;
+		  }
+		}
+
+		&:not(:last-child) {
+		  border-bottom: 1px solid $c-form-select-dropdown-border;
+		}
+
+		&-icon {
+		  margin-left: 8px;
+		}
+	  }
+	}
+  }
+
+  @include hover {
+	.#{$root} {
+	  &__input {
+		&::placeholder {
+		  color: $c-text;
+		}
+	  }
+	}
+  }
+
+  &_has-icon {
+	.#{$root} {
+	  &__input {
+		padding-right: 72px;
+	  }
+	}
+  }
+
+  &_active,
+  &_focus {
+	.#{$root} {
+	  &__label {
+		top: 0;
+		font-size: $fs-p4;
+		line-height: $lh-p4;
+	  }
+	}
+  }
+
+  &_active {
+	.#{$root} {
+	  //
+	}
+  }
+
+  &_focus {
+	.#{$root} {
+	  &__outline {
+		border-color: $c-success;
+	  }
+	}
+  }
+}

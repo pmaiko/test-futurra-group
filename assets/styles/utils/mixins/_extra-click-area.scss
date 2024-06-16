@@ -1,0 +1,12 @@
+@mixin extra-click-area ($area: 10) {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    top: -#{$area}px;
+    left: -#{$area}px;
+    width: calc(100% + #{$area * 2}px);
+    height: calc(100% + #{$area * 2}px);
+    content: '';
+  }
+}

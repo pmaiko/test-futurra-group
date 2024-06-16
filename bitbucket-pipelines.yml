@@ -1,0 +1,8 @@
+pipelines:
+  branches:
+    dev: # only dev branch
+      - step:
+          name: Deploy to dev server
+          deployment: Test
+          script:
+            - ssh $DEV_USER@$DEV_HOST REMOTE_DIR=$REMOTE_DIR BRANCH=$BITBUCKET_BRANCH 'bash -s' < ./deploy-dev.sh

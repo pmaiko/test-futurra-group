@@ -1,0 +1,141 @@
+{
+  "locales": [
+    {
+      "name": "UA",
+      "code": "uk",
+      "default": false,
+      "current": false
+    },
+    {
+      "name": "EN",
+      "code": "en",
+      "default": true,
+      "current": true
+    }
+  ],
+  "forms": {
+    "payment": {
+      "title": "Payment method",
+      "PayPal": {
+        "label": "Buy now",
+        "url": "https://www.google.com/"
+      },
+      "GooglePay": {
+        "label": "Pay",
+        "url": "https://www.google.com/"
+      },
+      "fields": [
+        {
+          "name": "card",
+          "type": "text",
+          "label": "Card number",
+          "placeholder": null,
+          "required": true,
+          "mask": "#### #### #### ####"
+        },
+        {
+          "name": "mouth",
+          "type": "select",
+          "label": "Month",
+          "placeholder": "Select",
+          "required": true,
+          "items": [
+            {
+              "label": "January",
+              "value": 0
+            },
+            {
+              "label": "February",
+              "value": 1
+            },
+            {
+              "label": "March",
+              "value": 2
+            },
+            {
+              "label": "April",
+              "value": 3
+            },
+            {
+              "label": "May",
+              "value": 4
+            },
+            {
+              "label": "June",
+              "value": 5
+            },
+            {
+              "label": "July",
+              "value": 6
+            },
+            {
+              "label": "August",
+              "value": 7
+            },
+            {
+              "label": "September",
+              "value": 8
+            },
+            {
+              "label": "October",
+              "value": 9
+            },
+            {
+              "label": "November",
+              "value": 10
+            },
+            {
+              "label": "December",
+              "value": 11
+            }
+          ]
+        },
+        {
+          "name": "year",
+          "type": "select",
+          "label": "Year",
+          "placeholder": "Select",
+          "required": true,
+          "items": [
+            {
+              "label": "2024",
+              "value": 2024
+            },
+            {
+              "label": "2025",
+              "value": 2025
+            },
+            {
+              "label": "2026",
+              "value": 2026
+            },
+            {
+              "label": "2027",
+              "value": 2027
+            },
+            {
+              "label": "2028",
+              "value": 2028
+            }
+          ]
+        },
+        {
+          "name": "cvc",
+          "type": "password",
+          "label": "CVC",
+          "placeholder": null,
+          "required": true,
+          "mask": "###"
+        }
+      ],
+      "submit": {
+        "label": "Submit",
+        "url": "https://www.google.com/"
+      },
+      "close": {
+        "label": "Close",
+        "url": null
+      }
+    }
+  }
+}

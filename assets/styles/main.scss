@@ -1,0 +1,44 @@
+@import "reset";
+@import "transitions";
+@import "fonts";
+@import "layout";
+@import "typography";
+@import "grid";
+@import "form/form-field";
+
+//layout
+@import "layout/header";
+@import "layout/footer";
+
+.vfm {
+  &--overlay {
+    background: rgba(0, 0, 0, 0.50);
+  }
+}
+
+.v-html-styles {
+  span {
+    color: $c-primary;
+  }
+}
+
+.v-html-styles-light {
+  span {
+    color: $c-primary-light;
+  }
+
+  &_uniq {
+    @include is(var2) {
+      @include respDown(xs) {
+        span {
+          color: $c-text;
+        }
+
+        b,
+        strong {
+          color: $c-primary-light;
+        }
+      }
+    }
+  }
+}

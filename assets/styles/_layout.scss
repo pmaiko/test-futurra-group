@@ -1,0 +1,64 @@
+html {
+  font-size: 16PX;
+
+  @function div($arg1, $arg2) {
+    @return calc($arg1 / $arg2)
+  }
+
+  @include respUp(xl) {
+    font-size: (div(16, map-get($breakpoints, 'xl')) * 100) + vw;
+  }
+}
+
+.layout,
+.error {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.page-content {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  width: 100%;
+}
+
+.page-block {
+  &_first {
+    //
+  }
+}
+
+.footer,
+.header {
+  flex-shrink: 0;
+}
+
+.svg-defs {
+  position: absolute;
+  top: -1000vh;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $z-index-overlay;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  visibility: hidden;
+}
+
+.nuxt-icon {
+  width: 100%;
+  height: 100%;
+}

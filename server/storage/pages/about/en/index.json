@@ -1,0 +1,28 @@
+{
+  "meta": {
+    "seo": {
+      "title": "title en",
+      "description": "description en",
+      "og": {
+        "title": "og title uk",
+        "description": "og description en",
+        "image": "og-image.png"
+      },
+      "robots": "index, follow",
+      "breadcrumbs": [
+        {
+          "label": "Main",
+          "url": "/"
+        }
+      ]
+    }
+  },
+  "blocks": [
+    {
+      "id": "BlockAbout",
+      "attributes": {
+        "title": "BlockAbout"
+      }
+    }
+  ]
+}

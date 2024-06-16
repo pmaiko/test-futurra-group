@@ -1,0 +1,49 @@
+// Usage:
+//@include aspect-ratio((
+//  xs: 272 / 140,
+//  md: 610 / 240,
+//  lg: 383 / 192
+//));
+// @include aspect-ratio((
+//   sm: 290 / 290,
+//   md: 584 / 514,
+//  xlg: 640 / 110,
+//   lg: 447 / 562,
+//   xl: 447 / 562
+// ));
+// or
+// @include aspect-ratio(calc(16 / 9));
+// @include aspect-ratio(16/9);
+
+@mixin aspect-ratio($arg) {
+  position: relative;
+
+  @if type-of($arg) == 'map' {
+    &::before {
+      display: block;
+      content: '';
+
+      @each $breakpoint, $value in $arg {
+        $val: calc(1 / $value);
+
+        @include respUp($breakpoint) {
+          padding-top: percentage($val);
+        }
+      }
+    }
+  }
+
+  @else if is-number($arg) {
+    $val: calc(1 / $arg);
+
+    &::before {
+      display: block;
+      padding-top: percentage($val);
+      content: '';
+    }
+  }
+
+  @else {
+    @error "pseudo-ratio mixin: Argument must be map or number";
+  }
+}

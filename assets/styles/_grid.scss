@@ -1,0 +1,35 @@
+.container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 135px;
+
+  &_less {
+    @include respUp(lg) {
+      padding: 0 235px;
+    }
+  }
+
+  @include respDown(sm) {
+    padding: 0 20px;
+  }
+}
+
+.container-minus {
+  margin-right: -32px;
+  margin-left: -32px;
+
+  @include respDown(sm) {
+    margin-right: -16px;
+    margin-left: -16px;
+  }
+}
+
+.container-plus {
+  padding-right: 32px;
+  padding-left: 32px;
+
+  @include respDown(sm) {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+}

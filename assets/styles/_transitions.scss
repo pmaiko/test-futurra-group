@@ -1,0 +1,57 @@
+.fade {
+  &-enter-active,
+  &-leave-active {
+	transition: opacity $base-transition;
+  }
+
+  &-enter,
+  &-leave-to {
+	opacity: 0;
+  }
+}
+
+.fade-down {
+  &-enter-active {
+    transition: all 0.3s ease-out;
+  }
+
+  &-leave-active {
+    transition: all 0.2s cubic-bezier(1, 0.5, 0.8, 1);
+  }
+
+  &-enter-from,
+  &-leave-to {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+}
+
+.fade-right {
+  &-enter-active {
+    transition: all 0.3s ease-out;
+  }
+
+  &-leave-active {
+    transition: all 0.2s cubic-bezier(1, 0.5, 0.8, 1);
+  }
+
+  &-enter-from,
+  &-leave-to {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

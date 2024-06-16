@@ -1,0 +1,63 @@
+{
+  "meta": {
+    "seo": {
+      "title": "Planet Learn",
+      "description": "description en",
+      "og": {
+        "title": "og title en",
+        "description": "og description en",
+        "image": "/bg-var1.png"
+      },
+      "robots": "index, follow",
+      "breadcrumbs": [
+        {
+          "label": "Main",
+          "url": "/"
+        }
+      ],
+      "favicons": [
+        { "rel": "icon", "type": "image/x-icon", "href": "/favicon-var1/favicon.ico" },
+        { "rel": "apple-touch-icon", "sizes": "180x180", "href": "/favicon-var1/apple-touch-icon.png" },
+        { "rel": "icon", "type": "image/png", "sizes": "32x32", "href": "/favicon-var1/favicon-32x32.png" },
+        { "rel": "icon", "type": "image/png", "sizes": "16x16", "href": "/favicon-var1/favicon-16x16.png" },
+        { "rel": "manifest", "href": "/favicon-var1/site.webmanifest" },
+        { "rel": "mask-icon", "href": "/favicon-var1/safari-pinned-tab.svg", "color": "#141315" }
+      ]
+    }
+  },
+  "blocks": [
+    {
+      "id": "BlockMainVar1",
+      "attributes": {
+        "logo": "/logo-var1.svg",
+        "backgroundImage": "/bg-var1.webp",
+        "title": "Start your learning journey now",
+        "subtitle": "Get a <strong><span>Planet</span>Learn</strong> plan to rock <br> self-learning",
+        "button": {
+          "label": "Get my plan",
+          "url": "https://www.google.com/"
+        },
+        "card": {
+          "title": "3-day trial for <span>$0.99</span>",
+          "subtitle": "Then $9.99",
+          "hint": "$39.99/week",
+          "promoTotalTime": "time",
+          "promoEndTime": "timestamp",
+          "promoEndText": "Then $39.99/week",
+          "list": [
+            "Exclusive access to <b><span>350+</span></b> learning programs",
+            "Personalized course plan",
+            "Comfy learning schedule made by you",
+            "<b><span>24/7</span></b> tutor support in a secure chat",
+            "Lifetime access to materials"
+          ],
+          "paymentButton": {
+            "label": "Safe & secure payment",
+            "url": "https://www.google.com/"
+          },
+          "text": "$0.99 charged today. If you don't cancel at least 24 hours before the end of the 3-day trial period, you will automatically be charged the full price of $19.99/Month . You can cancel your subscription at any time. By continuing, you indicate that you've read and agree to our Terms & Conditions, Privacy Policy , Money Back , and Subscription Terms ."
+        }
+      }
+    }
+  ]
+}

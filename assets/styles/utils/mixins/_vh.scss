@@ -1,0 +1,71 @@
+@mixin vh($value: 100, $definition: 0) {
+  height: #{$value * 1vh};
+
+  @if ($definition != 0) {
+    height: calc(var(--vh-unit, 1vh) * #{$value} - #{$definition}px);
+  }
+
+  @else {
+    height: calc(var(--vh-unit, 1vh) * #{$value});
+  }
+}
+
+@mixin minVh($value: 100, $definition: 0) {
+  min-height: #{$value * 1vh};
+
+  @if ($definition != 0) {
+    min-height: calc(var(--vh-unit, 1vh) * #{$value} - #{$definition}px);
+  }
+
+  @else {
+    min-height: calc(var(--vh-unit, 1vh) * #{$value});
+  }
+}
+
+@mixin maxVh($value: 100,  $definition: 0) {
+  max-height: #{$value * 1vh};
+
+  @if ($definition != 0) {
+    max-height: calc(var(--vh-unit, 1vh) * #{$value} - #{$definition}px);
+  }
+
+  @else {
+    max-height: calc(var(--vh-unit, 1vh) * #{$value});
+  }
+}
+
+@mixin vhStatic($value: 100, $definition: 0) {
+  height: #{$value * 1vh};
+
+  @if ($definition != 0) {
+    height: calc(var(--vh-unit-static, 1vh) * #{$value} - #{$definition}px);
+  }
+
+  @else {
+    height: calc(var(--vh-unit-static, 1vh) * #{$value});
+  }
+}
+
+@mixin minVhStatic($value: 100, $definition: 0) {
+  min-height: #{$value * 1vh};
+
+  @if ($definition != 0) {
+    min-height: calc(var(--vh-unit-static, 1vh) * #{$value} - #{$definition}px);
+  }
+
+  @else {
+    min-height: calc(var(--vh-unit-static, 1vh) * #{$value});
+  }
+}
+
+@mixin maxVhStatic($value: 100, $definition: 0) {
+  max-height: #{$value * 1vh};
+
+  @if ($definition != 0) {
+    max-height: calc(var(--vh-unit-static, 1vh) * #{$value} - #{$definition}px);
+  }
+
+  @else {
+    max-height: calc(var(--vh-unit-static, 1vh) * #{$value});
+  }
+}

@@ -1,0 +1,9 @@
+@mixin hover {
+  .has-mouse:not(.has-touch) &:hover {
+    @content;
+  }
+
+  .has-touch:not(.has-mouse) &:active {
+    @content;
+  }
+}

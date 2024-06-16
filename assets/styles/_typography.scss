@@ -1,0 +1,17 @@
+body {
+  font-family: $f-main;
+  font-size: $fs-base;
+  font-style: normal;
+  font-weight: 400;
+  line-height: $lh-base;
+  color: $c-text;
+  background-color: $c-background;
+}
+
+b {
+  font-weight: 700;
+}
+
+strong {
+  font-weight: 800;
+}
