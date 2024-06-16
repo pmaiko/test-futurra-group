@@ -10,7 +10,7 @@
     "serve": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
+    "postinstall": "prisma generate",
     "lint": "eslint .",
     "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
