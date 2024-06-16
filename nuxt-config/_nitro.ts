@@ -4,12 +4,12 @@ export default defineNuxtConfig({
       options: {
         minify: false
       }
-    },
-    storage: {
-      fs: {
-        driver: 'fs',
-        base: 'server/storage'
-      }
     }
+    // storage: {
+    //   fs: {
+    //     driver: 'fs',
+    //     base: './server/storage'
+    //   }
+    // }
   }
 })

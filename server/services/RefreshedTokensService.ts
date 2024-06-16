@@ -102,20 +102,20 @@ class RefreshedTokensService {
 
 export const storage: Storage = {
   getItem: async (key) => {
-    return String((await useStorage('fs').getItem(`.data:${key}`))) || null
+    return String((await useStorage('assets:server').getItem(`.data:${key}`))) || null
   },
   setItem: async (key: string, value: string)=> {
-    await useStorage('fs').setItem(`.data:${key}`, value)
+    await useStorage('assets:server').setItem(`.data:${key}`, value)
   },
   removeItem: async (key: string) => {
-    await useStorage('fs').removeItem(`.data:${key}`)
+    await useStorage('assets:server').removeItem(`.data:${key}`)
   },
   getItems: async () => {
-    const keys = await useStorage('fs').getKeys('.data')
+    const keys = await useStorage('assets:server').getKeys('.data')
     return await Promise.all(
       keys.map(async (fullPatch) => {
         const [, key] = fullPatch.split(':')
-        const value = String((await useStorage('fs').getItem(fullPatch))) || null
+        const value = String((await useStorage('assets:server').getItem(fullPatch))) || null
         return {
           [key]: value
         }

@@ -1,6 +1,6 @@
 export default defineEventHandler(async (event) => {
   const lang = event.req.headers['accept-language'] || useRuntimeConfig().public.LOCALE_DEFAULT
-  const data = await useStorage('fs').getItem(`global-data/${lang}/index.json`)
+  const data = await useStorage('assets:server').getItem(`global-data/${lang}/index.json`)
   if (data) {
     return data
   }

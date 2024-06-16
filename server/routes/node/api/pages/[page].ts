@@ -15,7 +15,7 @@ export default defineEventHandler(async (event) => {
   const getVariant = variants[variantKey] || function () {}
   const variant = getVariant()
 
-  const data: any = await useStorage('fs').getItem(`pages/${page}/${lang}/index${variant}.json`)
+  const data: any = await useStorage('assets:server').getItem(`pages/${page}/${lang}/index${variant}.json`)
 
   if (data) {
     const deepFindAndUpdate = (obj: any, targetKey: string, newValue: any): void => {
