@@ -22,7 +22,7 @@
   </div>
 </template>
 <script setup lang="ts">
-  import CircleImage from '~/assets/images/Circle.svg'
+  import CircleImage from '~/assets/images/circle.svg'
 
   defineProps<{
     unwrap?: boolean
