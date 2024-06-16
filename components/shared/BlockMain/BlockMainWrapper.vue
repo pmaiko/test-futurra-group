@@ -1,5 +1,5 @@
 <template>
-  <section class="block-main-wrapper flex flex-col flex-1">
+  <section class="block-main-wrapper flex flex-col flex-1 overflow-hidden">
     <div class="container">
       <div class="block-main-wrapper__head">
         <div class="block-main-wrapper__logo">
