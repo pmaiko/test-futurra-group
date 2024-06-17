@@ -36,11 +36,9 @@
     let variant
     if (randomVariant.value) {
       variant = randomVariant.value
-      console.log('from cookies')
     } else {
       variant = getRandomBoolean() ? Variants.var1 : Variants.var2
       randomVariant.value = variant
-      console.log('random')
     }
     params[abTestKey] = variant
   }
