@@ -1,21 +1,15 @@
 import _ from 'lodash'
-import { getRandomBoolean } from '~/utils/get-random-boolean'
+import { Variants, abTestKey } from '~/utils/config'
 
 export default defineEventHandler(async (event) => {
   const lang = event.req.headers['accept-language'] || useRuntimeConfig().public.LOCALE_DEFAULT
   const page = event?.context?.params?.page
   const query = getQuery(event)
 
-  const variants = {
-    var1: () => 'Var1',
-    var2: () => 'Var2',
-    test: () => getRandomBoolean() ? variants.var1() : variants.var2()
-  }
-  const variantKey = query?.abtest as keyof typeof variants
-  const getVariant = variants[variantKey] || function () {}
-  const variant = getVariant()
+  const variantKey = query[abTestKey] as Variants
+  const variant = Variants[variantKey] || (() => '')
 
-  const data: any = await useStorage('assets:server').getItem(`pages/${page}/${lang}/index${variant}.json`)
+  const data: any = await useStorage('assets:server').getItem(`pages/${page}/${lang}/index${_.upperFirst(variant)}.json`)
 
   if (data) {
     const deepFindAndUpdate = (obj: any, targetKey: string, newValue: any): void => {

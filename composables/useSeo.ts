@@ -7,20 +7,15 @@ export const  useSeo = (meta: Meta | null) => {
   const helpersStore = storeToRefs(useHelpersStore())
   const { $resp } = useNuxtApp()
   const { origin } = useRequestURL()
-  const { fullPath, query } = useRoute()
+  const { fullPath } = useRoute()
 
-  const variants = {
-    Var1: 'var1',
-    Var2: 'var2'
-  }
-
-  const variantKey = (meta?.seo.variant || query?.abtest) as keyof typeof variants
-  const variant = variants[variantKey] || ''
+  const variantValue = meta?.seo.variant as Variants
+  const variant = Variants[variantValue] || ''
 
   const mergedColors = {
     ...colorsVar1,
-    ...(variant === variants.Var1 ? colorsVar1 : {}),
-    ...(variant === variants.Var2 ? colorsVar2 : {})
+    ...(variant === Variants.var1 ? colorsVar1 : {}),
+    ...(variant === Variants.var2 ? colorsVar2 : {})
   }
 
   const generateAlternate = () => {

@@ -30,8 +30,23 @@
   const path = localizePath(route.path, useRuntimeConfig().public.LOCALE_DEFAULT)
   const apiUrl = path !== '/' ? path : '/home'
 
+  const params = { ...route.query }
+  const randomVariant = useCookie(randomVariantKey)
+  if (params[abTestKey] === 'test') {
+    let variant
+    if (randomVariant.value) {
+      variant = randomVariant.value
+      console.log('from cookies')
+    } else {
+      variant = getRandomBoolean() ? Variants.var1 : Variants.var2
+      randomVariant.value = variant
+      console.log('random')
+    }
+    params[abTestKey] = variant
+  }
+
   const { data, error } = await useFetchPage<Page>('/pages' + apiUrl, {
-    params: route.query,
+    params,
     lazy: false
   })
 
