@@ -6,8 +6,8 @@ export default defineEventHandler(async (event) => {
   const page = event?.context?.params?.page
   const query = getQuery(event)
 
-  const variantKey = query[abTestKey] as Variants
-  const variant = Variants[variantKey] || (() => '')
+  const variantValue = query[abTestKey] as Variants
+  const variant = Variants[variantValue] || (() => '')
 
   const data: any = await useStorage('assets:server').getItem(`pages/${page}/${lang}/index${_.upperFirst(variant)}.json`)
 
