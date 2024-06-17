@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="{'count-down-timer_low': (progress || 0) > 90}"
+    :class="{'count-down-timer_low': isLow}"
     class="count-down-timer text-fs-h4"
   >
     <div class="count-down-timer__time">
@@ -30,6 +30,10 @@
 
   const progressWidth = computed(() => {
     return `${((progress.value || 0) - 100) * -1}%`
+  })
+
+  const isLow = computed(() => {
+    return (progress.value || 0) > 90
   })
 
   const countdownTimerService = new CountdownTimerService(
